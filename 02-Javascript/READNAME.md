@@ -124,17 +124,17 @@ CSS와 JS를 별도의 파일로 분리하는 것이 바람직.
     - 폴더 위치가 C드라이브가 아닌 경우 `/d` 옵션 적용 -> `cd /d 폴더경로`
 - `node 파일이름` 명령으로 코드 실행
 
-![img](img/b.png)
+![img](img/b.Png)
 
 #### VSCode를 통한 실행
 
 - `Code Runner` 확장 익스텐션 설치
 
-![img](img/c.png)
+![img](img/c.Png)
 
 - 코드 창에서 `Ctrl + Alt + N` 으로 실행
 - 원하는 부분만 드래그 후 부분 실행 가능함.
 
 ##### 실행시 이전 출력 내용 삭제 설정
 
-![img](img/d.png)
+![img](img/d.Png)
