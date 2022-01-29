@@ -27,4 +27,4 @@ console.log(myNumber3);
 
 // 동일한 변수 재선언
 var myNumber3 = 789;
-console.log(Mynumber3);
+console.log(myNumber3);

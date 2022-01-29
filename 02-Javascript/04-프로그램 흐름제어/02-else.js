@@ -5,3 +5,4 @@ if (age > 19) {
 } else {
     console.log("성인이 아닙니다.");
 }
+

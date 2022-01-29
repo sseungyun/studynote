@@ -77,7 +77,7 @@ const x4 = true;
 const y4 = false;
 
 //OR(||) 연산은 모든 값이 거짓인 경우에만 결과가 거짓이므로
-//아래의 조건문은 실행되지 않는다.
+//아래의 조건문은 실행된다.
 
 if (x4 || y4) {
     console.log("x4 || y4 조건은 참 입니다.");
@@ -110,7 +110,7 @@ const y5 = false;
 
 // true && false 는 거짓이지만 그 결과는 부정했으므로 결과는 참이된다.
 if ( !(x5 && y5)) {
-    console.log("!(x1 && y1) 조건은 참 입니다.");
+    console.log("!(x5 && y5) 조건은 참 입니다.");
 }
 
 const x6 = true;
