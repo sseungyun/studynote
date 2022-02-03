@@ -9,3 +9,5 @@ while(i>0) {
     console.log("%d", i)
     i=i-2;
 }
+
+
