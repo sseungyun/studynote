@@ -33,7 +33,7 @@ console.groupEnd();
 const money2 = 12000;
 //const money2 = 3000;
 
-if (money >= 5000) {
+if (money2 >= 5000) {
     const k = money2-5000;
     // 조건값들을 공백을 기준으로 하나의 값으로 연결하는 함수.
     console.log("선물을 사고%d원 남는다." , k);

@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>연습문제.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="%EC%8B%A0%EC%8A%B9%EC%9C%A4-json-%EC%97%B0%EC%8A%B5%EB%AC%B8%EC%A0%9C">신승윤 JSON 연습문제</h1>
+<h2 id="2022-02-07">2022-02-07</h2>
+<h2 id="%EB%AC%B8%EC%A0%9C1">문제1.</h2>
+<p>다음은 10명의 학생들에 대한 혈액형 데이터이다.</p>
+<pre class="hljs"><code><div>['A', 'A', 'A', 'O', 'B', 'B', 'O', 'AB', 'AB', 'O']
+</div></code></pre>
+<p>아래와 같은 JSON을 정의하고, 각 혈액형별 학생수를 아래의 json의 각 key에 대한 value에 저장하시오. (혈액형별 학생 수를 for문을 활용하여 산출해야 합니다.)</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> result = {<span class="hljs-string">"A"</span> : <span class="hljs-number">0</span>, <span class="hljs-string">"B"</span> : <span class="hljs-number">0</span>, <span class="hljs-string">"AB"</span> : <span class="hljs-number">0</span>, <span class="hljs-string">"O"</span> : <span class="hljs-number">0</span>};
+
+
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> blood_data = [<span class="hljs-string">'A'</span>, <span class="hljs-string">'A'</span>, <span class="hljs-string">'A'</span>, <span class="hljs-string">'O'</span>, <span class="hljs-string">'B'</span>, <span class="hljs-string">'B'</span>, <span class="hljs-string">'O'</span>, <span class="hljs-string">'AB'</span>, <span class="hljs-string">'AB'</span>, <span class="hljs-string">'O'</span>];
+<span class="hljs-keyword">const</span> result = {<span class="hljs-string">"A"</span> : <span class="hljs-number">0</span>, <span class="hljs-string">"B"</span> : <span class="hljs-number">0</span>, <span class="hljs-string">"AB"</span> : <span class="hljs-number">0</span>, <span class="hljs-string">"O"</span> : <span class="hljs-number">0</span>};
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> b <span class="hljs-keyword">of</span> bloode_data) {
+    result[b]++;
+}
+
+<span class="hljs-built_in">console</span>.log(result);
+
+
+
+</div></code></pre>
+<hr>
+<h2 id="%EB%AC%B8%EC%A0%9C2">문제2.</h2>
+<p>다음의 JSON은 어느 학급의 중간고사 성적을 나타낸다.</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> exam = {
+    <span class="hljs-string">"철수"</span>: [<span class="hljs-number">89</span>, <span class="hljs-number">82</span>, <span class="hljs-number">79</span>, <span class="hljs-number">91</span>],
+    <span class="hljs-string">"민영"</span>: [<span class="hljs-number">91</span>, <span class="hljs-number">95</span>, <span class="hljs-number">94</span>, <span class="hljs-number">89</span>],
+    <span class="hljs-string">"남철"</span>: [<span class="hljs-number">65</span>, <span class="hljs-number">57</span>, <span class="hljs-number">71</span>, <span class="hljs-number">64</span>],
+    <span class="hljs-string">"혜진"</span>: [<span class="hljs-number">82</span>, <span class="hljs-number">76</span>, <span class="hljs-number">81</span>, <span class="hljs-number">83</span>]
+}
+</div></code></pre>
+<h3 id="2-1">2-1.</h3>
+<p>위 데이터에서 학생별 총점과 평균을 구하시오.</p>
+<h4 id="%EC%B6%9C%EB%A0%A5%EA%B2%B0%EA%B3%BC">출력결과</h4>
+<pre class="hljs"><code><div>철수의 총점은 341점 이고 평균은 85.25점 입니다.
+민영의 총점은 369점 이고 평균은 92.25점 입니다.
+남철의 총점은 257점 이고 평균은 64.25점 입니다.
+혜진의 총점은 322점 이고 평균은 80.5점 입니다.
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> exam = {
+    <span class="hljs-string">"철수"</span>: [<span class="hljs-number">89</span>, <span class="hljs-number">82</span>, <span class="hljs-number">79</span>, <span class="hljs-number">91</span>],
+    <span class="hljs-string">"민영"</span>: [<span class="hljs-number">91</span>, <span class="hljs-number">95</span>, <span class="hljs-number">94</span>, <span class="hljs-number">89</span>],
+    <span class="hljs-string">"남철"</span>: [<span class="hljs-number">65</span>, <span class="hljs-number">57</span>, <span class="hljs-number">71</span>, <span class="hljs-number">64</span>],
+    <span class="hljs-string">"혜진"</span>: [<span class="hljs-number">82</span>, <span class="hljs-number">76</span>, <span class="hljs-number">81</span>, <span class="hljs-number">83</span>]
+}
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> key <span class="hljs-keyword">in</span> exam) {
+   
+    <span class="hljs-keyword">let</span> sum = <span class="hljs-number">0</span>;   
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> p <span class="hljs-keyword">of</span> exam[key]) {
+        sum += p;
+    }
+
+    <span class="hljs-keyword">let</span> avg = sum / exam[key].length;
+
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"%s위 총점은 %d점이고 평균은 %d점입니다."</span> , key, sum, avg);
+}
+</div></code></pre>
+<h3 id="2-2">2-2.</h3>
+<p>위 문제의 점수가 순서대로 국어, 영어, 수학, 과학일 경우 수학에 대한 모든 학생의 총점과 평균을 구하시오.</p>
+<h4 id="%EC%B6%9C%EB%A0%A5%EA%B2%B0%EA%B3%BC">출력결과</h4>
+<pre class="hljs"><code><div>모든 학생의 수학 총점은 325점 이고 평균은 81.25점 입니다.
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> exam = {
+    <span class="hljs-string">"철수"</span>: [<span class="hljs-number">89</span>, <span class="hljs-number">82</span>, <span class="hljs-number">79</span>, <span class="hljs-number">91</span>],
+    <span class="hljs-string">"민영"</span>: [<span class="hljs-number">91</span>, <span class="hljs-number">95</span>, <span class="hljs-number">94</span>, <span class="hljs-number">89</span>],
+    <span class="hljs-string">"남철"</span>: [<span class="hljs-number">65</span>, <span class="hljs-number">57</span>, <span class="hljs-number">71</span>, <span class="hljs-number">64</span>],
+    <span class="hljs-string">"혜진"</span>: [<span class="hljs-number">82</span>, <span class="hljs-number">76</span>, <span class="hljs-number">81</span>, <span class="hljs-number">83</span>]
+}
+
+<span class="hljs-keyword">let</span> sum = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">let</span> student_count = <span class="hljs-number">0</span>;
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> key <span class="hljs-keyword">in</span> exam) {
+    sum += exam[key][<span class="hljs-number">2</span>];
+
+   
+    student_count++;
+}
+
+<span class="hljs-keyword">let</span> avg = sum / student_count;
+
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"모든 학생의 수학 총점은 %d점 이고 평균은 %d점입니다."</span>, sum, avg);
+</div></code></pre>
+<hr>
+<h2 id="%EB%AC%B8%EC%A0%9C3">문제3.</h2>
+<p>아래의 데이터는 2021년 01월 25일부터 02월 01일까지의 Covid19 일별 확진자 수를 표현한 자료구조다.</p>
+<pre class="hljs"><code><div>covid19 = [
+    {<span class="hljs-attr">date</span>: <span class="hljs-string">'0125'</span>: active: <span class="hljs-number">426</span>}, 
+    {<span class="hljs-attr">date</span>: <span class="hljs-string">'0126'</span>: active: <span class="hljs-number">343</span>}, 
+    {<span class="hljs-attr">date</span>: <span class="hljs-string">'0127'</span>: active: <span class="hljs-number">547</span>}, 
+    {<span class="hljs-attr">date</span>: <span class="hljs-string">'0128'</span>: active: <span class="hljs-number">490</span>}, 
+    {<span class="hljs-attr">date</span>: <span class="hljs-string">'0129'</span>: active: <span class="hljs-number">460</span>}, 
+    {<span class="hljs-attr">date</span>: <span class="hljs-string">'0130'</span>: active: <span class="hljs-number">443</span>}, 
+    {<span class="hljs-attr">date</span>: <span class="hljs-string">'0131'</span>: active: <span class="hljs-number">338</span>}, 
+    {<span class="hljs-attr">date</span>: <span class="hljs-string">'0201'</span>: active: <span class="hljs-number">299</span>}
+]
+</div></code></pre>
+<h3 id="3-1">3-1.</h3>
+<p>1월 25일부터 2월 1일까지의 누적 확진자 수와 일 평균 확진자 수를 구하시오.</p>
+<h4 id="%EC%B6%9C%EB%A0%A5%EA%B2%B0%EA%B3%BC">출력결과</h4>
+<pre class="hljs"><code><div>누적 확진자 수: 3346
+평균 확진자 수: 418.25
+</div></code></pre>
+<pre class="hljs"><code><div>covid19 = [
+    {<span class="hljs-attr">date</span>: <span class="hljs-string">'0125'</span>, <span class="hljs-attr">active</span>: <span class="hljs-number">426</span>}, 
+    {<span class="hljs-attr">date</span>: <span class="hljs-string">'0126'</span>, <span class="hljs-attr">active</span>: <span class="hljs-number">343</span>}, 
+    {<span class="hljs-attr">date</span>: <span class="hljs-string">'0127'</span>, <span class="hljs-attr">active</span>: <span class="hljs-number">547</span>}, 
+    {<span class="hljs-attr">date</span>: <span class="hljs-string">'0128'</span>, <span class="hljs-attr">active</span>: <span class="hljs-number">490</span>}, 
+    {<span class="hljs-attr">date</span>: <span class="hljs-string">'0129'</span>, <span class="hljs-attr">active</span>: <span class="hljs-number">460</span>}, 
+    {<span class="hljs-attr">date</span>: <span class="hljs-string">'0130'</span>, <span class="hljs-attr">active</span>: <span class="hljs-number">443</span>}, 
+    {<span class="hljs-attr">date</span>: <span class="hljs-string">'0131'</span>, <span class="hljs-attr">active</span>: <span class="hljs-number">338</span>}, 
+    {<span class="hljs-attr">date</span>: <span class="hljs-string">'0201'</span>, <span class="hljs-attr">active</span>: <span class="hljs-number">299</span>}
+]
+
+<span class="hljs-comment">// 전체 확진자 수를 위한 합계 변수</span>
+<span class="hljs-keyword">let</span> sum = <span class="hljs-number">0</span>;
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> j <span class="hljs-keyword">of</span> covid19) {
+    sum += j.active;
+}
+
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"누적 확진자 수: %d"</span>, sum);
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"평균 확진자 수: %d"</span>, sum / covid19.length );
+
+</div></code></pre>
+<h3 id="3-2">3-2</h3>
+<p>1월 25일부터 2월 1일까지 중에서 확진자가 가장 많이 나타난 날짜는 언제인가?</p>
+<h4 id="%EC%B6%9C%EB%A0%A5%EA%B2%B0%EA%B3%BC">출력결과</h4>
+<pre class="hljs"><code><div>확진자가 가장 많이 나타난 날: 0127
+</div></code></pre>
+<pre class="hljs"><code><div>covid19 = [
+    {<span class="hljs-attr">date</span>: <span class="hljs-string">'0125'</span>, <span class="hljs-attr">active</span>: <span class="hljs-number">426</span>}, 
+    {<span class="hljs-attr">date</span>: <span class="hljs-string">'0126'</span>, <span class="hljs-attr">active</span>: <span class="hljs-number">343</span>}, 
+    {<span class="hljs-attr">date</span>: <span class="hljs-string">'0127'</span>, <span class="hljs-attr">active</span>: <span class="hljs-number">547</span>}, 
+    {<span class="hljs-attr">date</span>: <span class="hljs-string">'0128'</span>, <span class="hljs-attr">active</span>: <span class="hljs-number">490</span>}, 
+    {<span class="hljs-attr">date</span>: <span class="hljs-string">'0129'</span>, <span class="hljs-attr">active</span>: <span class="hljs-number">460</span>}, 
+    {<span class="hljs-attr">date</span>: <span class="hljs-string">'0130'</span>, <span class="hljs-attr">active</span>: <span class="hljs-number">443</span>}, 
+    {<span class="hljs-attr">date</span>: <span class="hljs-string">'0131'</span>, <span class="hljs-attr">active</span>: <span class="hljs-number">338</span>}, 
+    {<span class="hljs-attr">date</span>: <span class="hljs-string">'0201'</span>, <span class="hljs-attr">active</span>: <span class="hljs-number">299</span>}
+]
+
+<span class="hljs-keyword">let</span> max_active = covid19[<span class="hljs-number">0</span>].active;
+<span class="hljs-keyword">let</span> max_date = covid19[<span class="hljs-number">0</span>].date;
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> j <span class="hljs-keyword">of</span> covid19) {
+    <span class="hljs-keyword">if</span>(max_active &lt; j.active) {
+        max_active = j.active;
+        max_date = j.date;
+    }
+}
+
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"확진자가 가장 많이 나타난 날: %s"</span>, max_date);
+</div></code></pre>
+
+</body>
+</html>

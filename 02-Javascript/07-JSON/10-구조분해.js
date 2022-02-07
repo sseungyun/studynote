@@ -10,8 +10,8 @@ console.log(b);
 
 // 구조분해를 활용하여 필요한 데이터만 추출하기
 const data = {name :'hello', age:20, height:172, weight:85};
-const {name} = data;
-console.log(name);
+const {myName} = data;
+console.log(myName);
 
 // data 안에 있는 height와 weight를 분해하면서 이름을 h와 w로 변경
 const {height: h, weight: w} = data;
@@ -47,7 +47,7 @@ console.log(one);
 console.log(two);
 
 // 구조분해를 수행한 나머지를 별도로 분리하기
-[b1,b2, ... rest_b] = [ 1,2,3,4,5,6,7,8,9];
+[b1,b2, ...rest_b] = [1,2,3,4,5,6,7,8,9];
 console.log(b1); // 1
 console.log(b2); // 2
 console.log(rest_b); // [3,4,5,6,7,8,9]
