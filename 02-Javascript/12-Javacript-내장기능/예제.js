@@ -64,3 +64,4 @@ console.log(Number.parseFloat('123'));
 
 // 내장 함수 parseInt()와 동일
 console.log(Number.parseInt('123'));
+

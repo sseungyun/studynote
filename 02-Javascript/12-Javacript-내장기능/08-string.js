@@ -15,7 +15,7 @@
  *  
  */
 
-// 변수 형식으로 문자여 ㄹ만들기
+// 변수 형식으로 문자열 만들기
 const str1 = "Hello World";
 console.log(str1);
 
