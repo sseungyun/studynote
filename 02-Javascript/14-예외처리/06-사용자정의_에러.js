@@ -1,0 +1,1 @@
+// class를 확장하는 extends
