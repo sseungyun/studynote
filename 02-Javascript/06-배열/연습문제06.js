@@ -15,4 +15,4 @@ for (let i=0; i<price.length; i++) {
     }
 }
 
-console.log(" 무료배송 항목: " + count + "건");2
+console.log(" 무료배송 항목: " + count + "건");

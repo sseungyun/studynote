@@ -7,7 +7,7 @@ let x = 0;
 for (let i = 1; i<=10; i++) {
     //미리 준비한 변수에 i를 합산
     x += i;
-    console.log("i=%d, x=%d, i , x");
+    console.log("i=%d, x=%d", i , x);
 }
 
 console.log("1부터 10까지의 합: " + x );

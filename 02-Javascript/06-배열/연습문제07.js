@@ -8,7 +8,7 @@ console.log('상품 가격 --> ' + price);
 //        자식 반복문 -> j가 i+1부터 길이보다 작은 동안
 //        i번째와 j번째의 크기를 비교하여 맞교환 처리 수행
 for (let i=0; i < price.length -1; i++) {
-    for (let j = 1 + 1; j<price.length; j++) {
+    for (let j = i+ 1; j<price.length; j++) {
         if (price[i] > price[j]) {
             const tmp = price[i];
             price[i] = price[j];

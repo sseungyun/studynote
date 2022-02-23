@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Javascript-시험.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="%EC%8B%A0%EC%8A%B9%EC%9C%A4-javascript-%EC%8B%9C%ED%97%98">신승윤 Javascript 시험</h1>
+<h2 id="2022-02-22">2022-02-22</h2>
+<hr>
+<h2 id="%EB%AC%B8%EC%A0%9C1">문제1</h2>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> ssn = <span class="hljs-string">"9203211"</span>;
+<span class="hljs-keyword">const</span> date = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>();
+<span class="hljs-keyword">const</span> now_year = date.getFullYear();
+
+<span class="hljs-keyword">let</span> yy = <span class="hljs-built_in">parseInt</span>(ssn.substring(<span class="hljs-number">0</span>,<span class="hljs-number">2</span>));
+<span class="hljs-keyword">let</span> mm = <span class="hljs-built_in">parseInt</span>(ssn.substring(<span class="hljs-number">2</span>,<span class="hljs-number">4</span>));
+<span class="hljs-keyword">let</span> dd = <span class="hljs-built_in">parseInt</span>(ssn.substring(<span class="hljs-number">4</span>,<span class="hljs-number">6</span>));
+<span class="hljs-keyword">let</span> gen = <span class="hljs-built_in">parseInt</span>(ssn.substring(<span class="hljs-number">7</span>,<span class="hljs-number">8</span>));
+
+
+yy = (gen &gt; <span class="hljs-number">2</span>) ? yy+<span class="hljs-number">2000</span> : yy+<span class="hljs-number">1900</span>;
+
+<span class="hljs-keyword">const</span> age = now_year - yy ;
+<span class="hljs-keyword">const</span> sex = (gen % <span class="hljs-number">2</span>) ? <span class="hljs-string">"여자"</span> : <span class="hljs-string">"남자"</span>;
+
+
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"당신은 %d세 %s입니다."</span>, age, sex)
+
+</div></code></pre>
+<h3 id="%EC%B6%9C%EB%A0%A5%EA%B2%B0%EA%B3%BC">출력결과</h3>
+<p><img src="시험1.png" alt="img"></p>
+<hr>
+<h2 id="%EB%AC%B8%EC%A0%9C2">문제2</h2>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> number = <span class="hljs-number">100</span>;
+<span class="hljs-keyword">let</span> sum = <span class="hljs-number">0</span>;
+
+<span class="hljs-keyword">for</span>(i=<span class="hljs-number">1</span>; i&lt;number; i++) {
+    <span class="hljs-keyword">if</span>(i % <span class="hljs-number">3</span> == <span class="hljs-number">0</span>) {
+        <span class="hljs-built_in">console</span>.log(i);
+        sum = sum+i;
+    }
+}
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"1부터 3의 배수의 대한 총 합은 :"</span>,sum);
+</div></code></pre>
+<h3 id="%EC%B6%9C%EB%A0%A5%EA%B2%B0%EA%B3%BC">출력결과</h3>
+<p><img src="시험2.png" alt="img"></p>
+<hr>
+<h2 id="%EB%AC%B8%EC%A0%9C3">문제3</h2>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">solution</span>(<span class="hljs-params">a</span>)</span>{
+    <span class="hljs-keyword">let</span> strArr = a.toString().split(<span class="hljs-string">''</span>);
+    <span class="hljs-keyword">let</span> numSum = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> num = <span class="hljs-number">0</span>; num&lt;strArr.length; num++){
+      numSum += strArr[num]*<span class="hljs-number">1</span>
+    }
+    <span class="hljs-keyword">return</span> (a % numSum === <span class="hljs-number">0</span>)? <span class="hljs-literal">true</span>: <span class="hljs-literal">false</span>;
+  }
+  
+  <span class="hljs-built_in">console</span>.log(solution(<span class="hljs-number">10</span>)); 
+  <span class="hljs-built_in">console</span>.log(solution(<span class="hljs-number">12</span>)); 
+  <span class="hljs-built_in">console</span>.log(solution(<span class="hljs-number">11</span>)); 
+  <span class="hljs-built_in">console</span>.log(solution(<span class="hljs-number">13</span>)); 
+ 
+</div></code></pre>
+<h3 id="%EC%B6%9C%EB%A0%A5%EA%B2%B0%EA%B3%BC">출력결과</h3>
+<p><img src="시험3.png" alt="img"></p>
+<hr>
+<h2 id="%EB%AC%B8%EC%A0%9C4">문제4</h2>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> K = <span class="hljs-number">30</span>;
+<span class="hljs-keyword">const</span> N = <span class="hljs-number">4</span>;
+<span class="hljs-keyword">const</span> M = <span class="hljs-number">100</span>;
+<span class="hljs-keyword">const</span> cookie = K * N;
+<span class="hljs-keyword">const</span> price = cookie &gt; M ? cookie - M : <span class="hljs-number">0</span>;
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"동수가 부모님께 받아야 하는 돈은 %d 원입니다"</span>, price);
+
+</div></code></pre>
+<h3 id="%EC%B6%9C%EB%A0%A5%EA%B2%B0%EA%B3%BC">출력결과</h3>
+<p><img src="시험4.png" alt="img"></p>
+<hr>
+<h2 id="%EB%AC%B8%EC%A0%9C5">문제5</h2>
+<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">student</span> </span>{
+       <span class="hljs-keyword">constructor</span>() {
+              <span class="hljs-keyword">this</span>._min = <span class="hljs-literal">null</span>;
+              <span class="hljs-keyword">this</span>._chul = <span class="hljs-literal">null</span>;
+              <span class="hljs-keyword">this</span>._na = <span class="hljs-literal">null</span>;
+              <span class="hljs-keyword">this</span>._soo = <span class="hljs-literal">null</span>;
+              <span class="hljs-keyword">this</span>._young = <span class="hljs-literal">null</span>;
+       }
+
+       <span class="hljs-keyword">set</span> _min(value) {
+              
+                     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">""</span>)
+              }
+       }
+
+
+
+
+
+<span class="hljs-comment">/**const grade = new Array();
+*/</span>
+
+
+
+<span class="hljs-comment">/**let data = [82, 76, 91, 98, 64];
+
+let sum = 0;
+
+for (let i=0; i &lt; data.length; i++) sum += data[i];
+
+let mean = sum/data.length 
+
+console.log(mean);
+*/</span>
+
+
+</div></code></pre>
+<h3 id="%EC%B6%9C%EB%A0%A5%EA%B2%B0%EA%B3%BC">출력결과</h3>
+<p><img src="" alt="img"></p>
+
+</body>
+</html>

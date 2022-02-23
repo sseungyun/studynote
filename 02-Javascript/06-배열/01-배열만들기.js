@@ -1,16 +1,17 @@
 // 배열을 저장할 빈 변수 언언
-let myArr1;
+let myArray1;
+let myArray2
 
 // 배열의 할당
 
-myArr1 = [1, 3.14, true, "hello"];
+myArray1 = [1, 3.14, true, "hello"];
 console.log(myArr1);
 
 // 선언과 할당의 통합
-let myArr2 = [ 1, 3.14, true, "hello"];
-console.log(myArr2);
+let myArray2 = [ 1, 3.14, true, "hello"];
+console.log(myArray2);
 
-const len = myArr2.length;
+const len = myArray2.length;
 console.log("배열의 원소 수=%d", len);
 
 //5라는 값을 원소로 갖는 한 칸으로 구성된 배열 만들기
