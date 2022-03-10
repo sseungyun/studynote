@@ -29,16 +29,17 @@ ul, ol {
 
   /* 한 줄에 4개씩, 가로 배치 
  * ----------------------------------------------- */
- #gallery li {
+ #gallery li {             
      width: 25%;
-     float: left;
+     float: left;   /** floot를 갤러리 처럼 사용하려면 모든 요소들이 높이가 같아야 
+                    한다는 전제가 있어야 함. */
  }
 
   /* 링크의 영역 확장(공식)
    - 크기와 여백을 주기 위하여 block으로 설정 후 , 가로 가득 
  * ----------------------------------------------- */
- #gallery li a {
-     display: block;
+ #gallery li a {       
+     display: block;      /* 목록정의 태그 안에 링크가 있으면 무조건 display:block */
      width: auto;
      padding:10px;
  }
@@ -54,7 +55,7 @@ ul, ol {
  * ----------------------------------------------- */
  #gallery .thumb img {
      width: 100%;
-     object-fit: cover;
+     object-fit: cover;  /** 비율이 가로세로가 다를때 가득채워주는 속성 */
  }
 
   /* 텍스트 영역 처리 
