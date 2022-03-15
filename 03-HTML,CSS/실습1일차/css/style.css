@@ -1,0 +1,300 @@
+
+#div {
+    display: block;
+}
+
+
+/** 전체 영역 
+-------------------------------------*/
+body,
+html {
+    margin:0px;
+    padding: 0px;
+    font-family: "Times New Roman", Georgia, Serif;
+}
+
+
+/** 상단 전체 영역 설정 
+-------------------------------------*/
+#container-main {
+    width: 100%;
+    height :50px;
+    overflow: hidden;
+    box-shadow: 2px 0 5px;
+    position:fixed;
+    background-color: white;
+    padding-top: 25px;
+        
+}
+
+/** 상단 a 태그 설정 
+-------------------------------------*/
+#container a {
+    text-decoration: none;
+    color : black;
+    
+}
+
+/**  상단 a 태그 hover 설정
+-------------------------------------*/
+#container a:hover {
+    background: gray;
+}
+
+/** 왼쪽 상단 영역 설정
+-------------------------------------*/
+#big-header {
+    float:left;
+    padding: 0px 10px;
+}
+
+/** 오른쪽 상단 영역 설정
+-------------------------------------*/
+#small-header {
+    display:inline-block;
+    float:right;   
+}
+
+/** 오른쪽 상단 영역 여백 설정 
+-------------------------------------*/
+#small-header a {
+    padding: 15px;
+    margin: 0px 10px;
+}
+
+.clear {
+    float:none;
+    clear:both;
+}
+
+/** 햄버거 이미지 파일 설정
+-------------------------------------*/
+
+#hamburger {
+    height: 800px;
+    margin: 0px 150px;
+}
+
+/** Le Catering 위치 설정
+-------------------------------------*/
+#subHamburger {
+    position: relative;
+    top: -80px;
+    left: 200px;
+}
+
+/** Le Catering 폰트 굵기 설정
+-------------------------------------*/
+.xxlarge {
+    font-weight : 100;
+}
+
+/** 본문 영역 크기 설정 및 점선 설정
+-------------------------------------*/
+#content {
+    margin: 80px 200px;
+    height: 720px;
+    border-bottom: 1px dotted gray;
+}
+
+/** 본문 이미지 파일 영역 설정 
+-------------------------------------*/
+.setting1 {
+    float:left;
+    width: 500px;
+    height: 700px;
+    margin-right: 50px;
+    background-size: contain;
+}
+
+/** 본문 텍스트 파일 영역 설정
+-------------------------------------*/
+
+#content .content1-main {
+    float:left;
+    width: 600px;
+    text-align: center;
+}
+
+/** 본문 제목영역 제외 텍스트 파일 영역 설정 
+--------------------------------------------*/
+.content-main {
+    text-align: center;
+    
+}
+
+/** 본문 h3 태그영역 설정 
+--------------------------------------------*/
+#content h3 {
+    font-size: 25px;
+    text-align:center;
+}
+
+
+/** 본문 제목 설정 
+--------------------------------------------*/
+#content .content1-main h3 {
+    font-size: 30px;
+    margin-bottom: 35px;
+    font-weight: 200;
+}
+
+/** 본문 소제목 설정 
+--------------------------------------------*/
+#content .content-main h5 {
+    font-size: 19px;
+    font-weight: 200;
+    letter-spacing: 3px;
+    margin-bottom: 40px;
+}
+
+/** 본문 첫번째 문단 영역 설정 
+--------------------------------------------*/
+#content .content-large1 {
+    font-size: 18px;
+    text-align: left;
+
+}
+
+/** 본문 두번째 문단 영역 설정 
+--------------------------------------------*/
+#content .content-large2 {
+    font-size: 18px;
+    color: gray;
+    text-align: left;
+
+}
+
+
+/** 서브 본문 전체 영역 설정 
+--------------------------------------*/
+
+#sub-content {
+    margin:80px 200px;
+    height: 830px;
+    border-bottom:1px solid gray;
+}
+
+
+/** 서브 본문 텍스트 영역 설정 
+--------------------------------------*/
+#sub-content .text2{
+    float: left;
+    width: 500px;
+    margin-left: 150px;
+    
+}
+
+
+
+/** 서브 본문 제목 설정
+--------------------------------------*/
+#sub-content .text2 .content2-main {
+    text-align: center;
+    font-size: 50px;
+    letter-spacing: 3px;
+    margin-bottom: 30px;
+}
+
+
+
+/** 서브 본문 p 태그 설정
+--------------------------------------*/
+.text2 p {
+ font-size: 20px;
+ letter-spacing: 3px;
+ margin-bottom: 30px;
+}
+
+
+/**  서브 본문 h4 태그 설정
+--------------------------------------*/
+.text2 h4 {
+    margin-bottom: 40px;
+}
+
+
+/** 이미지 영역 설정
+--------------------------------------*/
+.content2-img {
+    float:right;
+    width: 500px;
+    height: 750px;
+    margin-right: 250px;
+    background-size: contain;
+}
+
+
+/** contact 전체 영역 설정
+-------------------------------------------------*/
+
+#contact {
+    margin : 80px 200px;
+    height: 630px;
+    margin-bottom: 0;
+}
+
+
+/** contact 텍스트 제목 영역 설정
+--------------------------------------*/
+#contact h2 {
+    font-weight: 500;
+    font-size: 30px;
+    letter-spacing: 3px;
+    margin-bottom: 35px;
+}
+
+
+/** contact 텍스트 본문 p태그 설정
+--------------------------------------*/
+#contact p {
+    font-size: 15px;
+   
+    margin-bottom: 35px;
+}
+
+
+/** contact 본문 부분 색상 지정
+--------------------------------------*/
+#contact .contact-p2 {
+    font-size: 18px;
+    color: green;
+}
+
+
+/** contact input 태그 설정 
+--------------------------------------*/
+#contact .contact-text input{
+    width: 100%;
+    height: auto;
+    border:none;
+    border-bottom: 1px solid gray;
+}
+
+#contact .text-button {
+    width: 150px;
+    height: 40px;
+    border: none;
+}
+ /** 하단 설정
+--------------------------------------*/
+#footer {
+    text-align: center;
+    width: 100%;
+    height: 100px;
+    background-color : whitesmoke;
+}
+
+/** 하단 텍스트 위치 및 크기 설정
+--------------------------------------*/
+.footer-text {
+    padding-top: 40px;
+    font-size:18px;
+}
+
+
+/** 하단 a 태그 색상 변경
+--------------------------------------*/
+.footer-text a {   
+    color:black;
+}

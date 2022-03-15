@@ -7,32 +7,32 @@
 }
 
 a {
-    color : #222222;
-    text-decoration: none;
+    color : #222222;        /* 모든 a 태그색상 검정 */
+    text-decoration: none;    /* 텍스트 밑줄 제거 */
 }
 
 hr {
-    display:none;
+    display:none;  
 }
 
 /* 하단 공통 footer
 ---------------------------------------------*/
 
 #footer {
-    width: 318px;
-    margin: auto;
-    text-align: center;
-    padding-bottom: 30px;
-    position: relative;
+    width: 318px;           /* 하단영역 가로폭 설정  */
+    margin: auto;           /* 가운데 정렬 */
+    text-align: center;     /* 텍스트 가운데 정렬 */
+    padding-bottom: 30px;   /* 아래쪽 안쪽 여백 30px 간격 */
+    position: relative;     /* 요소의 원래 기준으로 좌표 생성 */
 }
 
 /* 하단 공통 footer > 카피라이트
 ---------------------------------------------*/
-#footer address {
-    width: auto;
-    height: 59px;
-    background: url(../img/bottom_bg.png) center center no-repeat;
-    text-indent: -10000px;
+#footer address {       
+    width: auto;        /* address 부분 가로폭 전체영역 */
+    height: 59px;       /* 높이 59px */
+    background: url(../img/bottom_bg.png) center center no-repeat; /* 이미지 x축:가운데 y축:가운데 , no-repeat: 반복하지 않음 */
+    text-indent: -10000px; /* 텍스트 없애기 */
 }
 
 
@@ -40,8 +40,8 @@ hr {
 /* 하단 공통 footer > 센터소개 버튼
 ---------------------------------------------*/
 #footer span {
-    position: absolute;
-    left: 12px;
+    position: absolute; /* 부모에 끝으로부터 좌표 설정 */
+    left: 12px;         
     top: 20px;
 }
 
@@ -49,6 +49,6 @@ hr {
 ---------------------------------------------*/
 
 #footer li {
-        display: inline;
+        display: inline;    /* 트위터, 페이스북 가로 배열 설정 */
         padding: 0  30px; 
     }

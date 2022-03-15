@@ -3,15 +3,15 @@
 /* 배경
 -------------------------------------------*/
 body {
-    background: #46464D url(../img/top_bg2.png) repeat-x;
+    background: #46464D url(../img/top_bg2.png) repeat-x; /* 배경이미지 설정 및, 이미지추가, 가로로 반복 */
 }
 
 /* 상단 타이틀
 -------------------------------------------*/
 #header {
-    width: 319px;
+    width: 319px;       
     margin: auto;
-    text-align: center;
+    text-align: center; 
     margin-bottom: 15px;
 }
 
