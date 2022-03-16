@@ -1,0 +1,39 @@
+
+
+
+#photo .gallery-list1 {
+    
+    float:left;
+}
+
+#photo .gallery-list2 {
+    float:left;
+}
+
+#photo .gallery-list3 {
+    float:left;
+}
+
+#photo .gallery-list4 {
+    float:left;
+}
+
+#photo .gallery-list1 {
+    width: 400px;
+    height: 500px;
+}
+
+#photo .gallery-list2 {
+    width: 400px;
+    height: 500px;
+}
+
+#photo .gallery-list3 {
+    width: 500px;
+    height: 500px;
+}
+
+#photo .gallery-list4 {
+    width: 400px;
+    height: 500px;
+}
