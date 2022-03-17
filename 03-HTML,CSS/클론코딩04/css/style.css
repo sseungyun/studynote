@@ -239,6 +239,10 @@ html {
     font-weight: 7000;
 }
 
+#main5 a:hover {
+    color: pink;
+}
+
 
 
 
