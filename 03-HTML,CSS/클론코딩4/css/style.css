@@ -74,6 +74,8 @@ html {
 
 #main2 .main2-text {
     text-align:left;
+    line-height: 150%;
+    font-weight: 700;
 }
 
 #main2 .main2-subtext{
@@ -95,10 +97,9 @@ html {
 
 }
 
-.main2 a:hover{
-    background-color:gray;
+#footer .footer-a a:hover{
+    background: gray;
 }
-
 
 #main3 {
     width: 100%;
@@ -235,7 +236,7 @@ html {
     padding: 0px 200px;    
     text-decoration: none;
     font-size: 15px;
-    font-weight: 100;
+    font-weight: 7000;
 }
 
 
