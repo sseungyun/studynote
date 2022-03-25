@@ -195,15 +195,12 @@ body, html {
 
 #main3 {
     margin: 0px 200px;
-    width:auto;
-    
+    width:auto;  
 }
 
 #main3 input {
     display:block;
     width: 100%;
-    
-    
 }
 
 
