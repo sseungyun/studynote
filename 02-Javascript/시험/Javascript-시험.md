@@ -26,7 +26,7 @@ console.log("당신은 %d세 %s입니다.", age, sex)
 ```
 
 ### 출력결과
-![img](시험1.png)
+![img](%EC%8B%9C%ED%97%981.png)
 
 ---
 ## 문제2

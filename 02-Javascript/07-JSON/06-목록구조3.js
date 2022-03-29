@@ -24,7 +24,7 @@ console.groupEnd();
 // for~of문
 console.group("for~of문");
 for (let k of bbs.item) {
-    console.log("["+ k.id + "] " + k.subject);
+    console.log("[" + k.id + "] " + k.subject);
 
 }
 console.groupEnd();
