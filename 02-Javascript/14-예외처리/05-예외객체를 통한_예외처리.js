@@ -14,11 +14,12 @@ function foo(x, y) {
 const k = null;
 
 try {
-    k = foo(-1, -2);
+    k = foo(-1, -2); // 이 부분이 실행되다가 오류가나서 catch로 뛰었기때문에 
+                     // k로 할당될 틈이 없이 변수 설정에 null이 그대로 출력됨.
 }   catch (err) {
     // 이 블록으로 전달되는 err객체는 5라인에서 생성한 Error 클래스의 객체이다.
     console.log("에러이름: %s" , err.name);
     console.log("에러내용: %s" , err.message);
 }
 
-console.log(k);
+console.log(k);  

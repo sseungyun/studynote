@@ -44,11 +44,12 @@
         const result2 = document.querySelector("#result2");
 
         listener.addEventListener('keyup', (e) => {
+            // (e) 이벤트를 받아 
             // 이번에 눌러진 키에 대한 keycode값 얻기
-            const keyCode = e.keyCode;
+            const keyCode = e.keyCode; // (e)e객체안에 있는 keyCode라는 프로퍼티를 사용하면 
+                                       // 컴퓨터 일렬번호를 받아올 수 있다.
 
             result1.innerHTML = keyCode;
-
             if (keyCode == 13) {
                 result2.innerHTML = '엔터키가 눌러졌습니다.';
             } else if (keyCode == 8) {

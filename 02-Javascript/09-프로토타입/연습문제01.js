@@ -26,6 +26,36 @@
 
  */
 
+
+function Student(kor, eng, math) {   // 생성자에서 파라미터를 받는 이유는 멤버변수를 초기화하기 위함이다. 
+    this._kor = kor;                 // 그러니 이 값들을 멤벼 변수에 연결해주는걸 기본 패턴!
+    this._eng = eng;
+    this._math = math;
+}
+
+Student.prototype = {
+    sum: function() {
+        return this._kor + this._eng + this._math;
+    },
+
+    avg : function() {
+        return this.sum() / 3;      //this.sum() 이라고 하면 같은 그룹에 속해있는 함수를 호출이 가능하다.! 
+    }
+};
+
+const grade = [
+    ["철수", 92, 81, 77],     // cons=item           item[0] = 철수 
+    ["영희", 72, 95, 98],
+    ["민혁", 80, 86, 84],
+];
+
+for(const item of grade) {
+    const s = new Student(item[1], item[2], item[3]);
+    console.log("%s 의 총점은 %d점이고 평균은 %d점 입니다", item[0] , s.sum(), s.avg());
+}
+
+
+/** 
 function Student(kor, eng, math) {
     this._kor = kor;
     this._eng = eng;
@@ -64,3 +94,5 @@ console.log("철수의 총점은 %d점 이고 평균은 %d점 입니다.", s1.su
 console.log("영희의 총점은 %d점 이고 평균은 %d점 입니다.", s2.sum(), s2.avg());
 console.log("민혁의 총점은 %d점 이고 평균은 %d점 입니다.", s3.sum(), s3.avg());
 console.groupEnd();
+
+*/

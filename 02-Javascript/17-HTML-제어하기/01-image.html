@@ -61,9 +61,9 @@
         <img src="img/img01.jpg" id="target" />
     </div>
 
-    <script>
-        document.querySelectorAll(".link").forEach((v, i) => {
-            v.addEventListener('click ', e => {
+    <script>                                    // forEach에서 (v)는 각원소에 배열 하나하나가 된다. (링크 하나하나가 됨))
+        document.querySelectorAll(".link").forEach((v, i) => {        
+            v.addEventListener('click ', e => {  
                 // 링크에 대한 클릭 이벤트 발생 후 href 속성이 동작하게 된다.
                 // 아래 구문은 링크에 대한 클릭 이벤트 동작 후,
                 // href 속성이 동작하는 것을 방지한다.
@@ -71,13 +71,13 @@
 
                 // 클릭된 링크가 갖는 속성값 가져오기
                 // -- > 링크가 가르키는 원본 이미지의 주소
-                const src = e.currentTarget.getAttribute("href");       // -->img/img04.jpg
+                const src = e.currentTarget.getAttribute("href");    // 링크를 클릭했다면! 클릭된 링크 스스로에 href값을 가져옴   // -->img/img04.jpg
                 const title = e.currentTarget.getAttribute("title");       // -->테스트 이미지4
-                console.log(src);
+                console.log(src); // 이미지값이 출력됨.
                 console.log(title);
 
-                const target = document.querySelector("#target");
-                target.setAttribute("src", src);
+                const target = document.querySelector("#target"); // 아이디가 target인 객채를 가져와서
+                target.setAttribute("src", src); // 이 객체의 src속성에 링크에 걸려있던 src속성을 가져옴.
                 target.setAttribute("alt", title);
             });
         });

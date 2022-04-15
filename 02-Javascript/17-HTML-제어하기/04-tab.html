@@ -77,11 +77,11 @@
     <script>
         document.querySelectorAll('.tablinks').forEach((v,i) => {
             v.addEventListener('click', (e) => {
-                //현재 클릭된 항목의 인덱스 번호
+                //현재 클릭된 항목의 인덱스 번호ㄴ
                 const currentIndex = i;
 
                 // 클릭된 버튼에 적용된 'data-target'값을 취득
-                const currentTarget = e.currentTarget.dataset.target;
+                const currentTarget = e.currentTarget.dataset.target;    
 
                 // 모든 버튼에 대한 active클래스 해제 
                 document.querySelectorAll('.tablinks').forEach((v1, i1) => {

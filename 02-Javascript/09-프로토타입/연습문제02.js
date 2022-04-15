@@ -36,15 +36,15 @@ Reatangle.prototype = {        //가로 세로를 getter setter로 관리하는 
         this._height = param;
     },
     getAround: function () {
-        return this.width * 2 + this.height * 2;
+        return this.width * 2 + this.height * 2;              // this. 언더바가 없는건 getter를 통해 값을 받아오는 것.
     },
     getArea: function () {
         return this.width * this.height;
     },
 };
 
-const rect = new Reatangle();
-rect.width = 10;
+const rect = new Reatangle();            // 객체를 만든 후 생성자 파라미터가 없으니 
+rect.width = 10;                         // setter 로 값을 넣어 줌.
 rect.height = 5;
 
-console.log("둘레의 길이는 %d이고 넓은 %d입니다.", rect.getAround(), rect.getArea());
+console.log("둘레의 길이는 %d이고 넓이는 %d입니다.", rect.getAround(), rect.getArea());

@@ -1,7 +1,8 @@
 /** 
  * 비동기 처리로 실행되는 함수에 대한 결과 처리를 별도의 로직으로 실행할 수 있는 기법
- * 
- */
+ * 동기처리 -> 순차작업 
+ * 비동기   -> 비순차작업 (다운로드를 여러번에 동시에 받는걸 비동기 처리라고 함.)
+ */ 
 
 function random(n1, n2) {
     return parseInt(Math.random() * (n2 - n1 + 1)) + n1;
@@ -9,30 +10,33 @@ function random(n1, n2) {
 
 // Promise를 가동하기 위해서는 Promise객체를 리턴하는 함수가 필요함.
 function getLuckyResult() {
-    // Promise 객체는 resolve 함수와, reject 함수를 파라미터로 받는 콜백이 필요함.
-    return new Promise(function (resolve, reject) {
+    
+    // Promise는 성공했을 때 , 실패했을 때의 경우를 분리 해 놨다.
+    // new 호출하면서 들어가는 함수가 생성자 파라미터! 왜냐하면 생성자는 new에서 객체만들 때 자동으로 실행되는 함수, 즉 new라는 키워드에 반응하는 함수
+    // Promise 객체(new로 생성) 는 resolve 함수와, reject 함수를 파라미터로 받는 콜백이 필요함.(약속) 
+    return new Promise(function (resolve, reject) {         // 우리가 해야할 것은 fuction() 콜백안에서 작업해야한다. 단 이런경우로 작업해야하는것은 네트워크 통신의 경우밖에 없다.
         // 이 안에서 비동기 작업을 시작함.
         setTimeout(() => {
             console.log("당신의 추첨 결과는?....");
             const lucky = random(1, 9);
 
             if (lucky % 2 == 0) {
-                // 작업의 결과가 성공으로 판별된 경우 resolve()를 호출함
                 // 파라미터는 단 하나만 가능.
                 // 여러 개의 정보를 보내야 하는 경우 JSON구조가 적절
-                resolve({msg: "당첨입니다~!!", a: 1, b: 2, c: 3});
+                // 작업의 결과가 성공으로 판별된 경우 resolve()를 호출함   // 이게 규칙!
+                resolve({msg: "당첨입니다~!!", a: 1, b: 2, c: 3}); // 성공했을 때 사용자에게 보여줘야할 정보는 {}로 묶어서 보낸다. 
             } else {
-                // 작업의 결과가 실패로 판별된 경우 reject()을 호출함
+                // 작업의 결과가 실패로 판별된 경우 reject()을 호출함 // 이게 규칙!
                 reject({msg: "꽝 ~!!!", d:-1, e: -2});
             }
         }, 1000);
     });
-
+}
     /** Promise 객체를 리턴받기 위한 함수를 호출 */
     // getLuckyResult()함수 내부에서 Promise 객체가 생성되면서,
     // Promise 클래스에 전달한 생성자 파라미터(콜백함수)가 실행될 것이다.
     // -- > resolve 혹은 reject가 호출된 상태라는 의미
-    const mypromise = getLuckyResult();
+    const mypromise = getLuckyResult();  
 
     /** Promise객체가 생성되는 과정에서 생성자로 전달된 콜백함수의 실행결과를 감지하는 부분 */
     // --> resolve 혹은 reject 중에서 실행된 함수가 무엇인지 감지
@@ -49,4 +53,3 @@ function getLuckyResult() {
         // 생략 가능
         console.log("fin :)");
     });
-}

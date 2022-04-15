@@ -22,4 +22,4 @@ for (const item of myArr) {
     }
 }
 
-console.groupEnd();
+console.groupEnd();                                     

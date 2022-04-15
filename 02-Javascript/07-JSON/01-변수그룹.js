@@ -44,3 +44,11 @@ for (const k of keys) {
     console.groupEnd();
 }
 
+
+//JSON 객체의 key를 선언된 변수 (k)에 순차적으로 할당하며 모든 key값을 탐색한다.
+for(const k in student) {
+    console.group(k);
+    console.log(student[k]);
+    console.groupEnd();
+}
+

@@ -8,6 +8,6 @@ console.log("에러내용: %s", err.message);
 
 // 개발자가 직접 에러를 발생시킬 수 있다.
 // --> 이 구문을 실제 에러로 인식하기 때문에 프로그램이 이 위치에서 중단된다.
-throw err;
+throw err; 
 
 console.log("프로그램 종료");

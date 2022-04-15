@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lnag="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>네이버 회원가입</title>
+    <link rel="stylesheet" href="naver.css">
+    
+</head>
+<body>
+    <form name="join" onsubmit="return Validation();" method="post"
+        action="mailto:jyj6010@naver.com?subject=안녕하세요" enctype="text/plain">
+    <div class="main">
+        
+        <!--
+            * @filename    : naver.html
+            * @author      : 신승윤 (gsh05144@naver.com)
+            * @description : div 영역 지정 및 이미지 업로드
+        -->
+        <header>
+            <div class="logo">
+                <a href="https://www.naver.com/" title="네이버 홈페이지"><img src="naver.png" class="image"></a>
+            </div>
+        </header>
+
+        <!--회원가입 부분-->
+        <div class="signup-wrap">
+            <div?>
+                 <!--
+                    * @filename    : naver.html
+                    * @author      : 신승윤 (gsh05144@naver.com)
+                    * @description : 아이디 영역 input 태그 삽입.
+                 -->
+                <h3>아이디</h3>
+                <span class="main-text">
+                    <input type="text" id="id" Name="id"></input>
+                    <span class="add">@naver.com</span>
+                </span>
+
+                <!--
+                    * @filename    : naver.html
+                    * @author      : 신승윤 (gsh05144@naver.com)
+                    * @description : 비밀번호 영역 input 태그 삽입.
+                 -->
+                <h3>비밀번호</h3>
+                <span class="main-text">
+                    <input  type="text" id="pwd" Name="pwd"></input>
+                </span>
+
+                
+                <!--
+                    * @filename    : naver.html
+                    * @author      : 신승윤 (gsh05144@naver.com)
+                    * @description : 비밀번호 재확인 영역 input 태그 삽입.
+                 -->
+                <h3>비밀번호 재확인</h3>
+                <span class="main-text">
+                    <input type="text" id="pwd2" Name="pwd"></input>
+                </span>  
+            
+
+            
+                <!--
+                    * @filename    : naver.html
+                    * @author      : 신승윤 (gsh05144@naver.com)
+                    * @description : 이름영역 설정 및 input 태그 삽입.
+                 -->
+                <h3>이름</h3>
+                <span class="main-text">
+                    <input type="text" id="name" Name="name"></input>
+                </span>
+                
+
+                <!--
+                    * @filename    : naver.html
+                    * @author      : 신승윤 (gsh05144@naver.com)
+                    * @description : 생년월일 설정 및 input속성, option속성 사용.
+                 -->
+                 <h3>생년월일</h3>
+                 <span style="display: flex;">
+                     <span class="main-text-birth">
+                         <input id="yy" type="text" placeholder="년(4자)"></input>
+                     </span>
+                     <span class="main-text-birth" style="margin-left: 10px;">
+                         <select id="mm" class="selectbox" name="month" onchange="">
+                             <option value="month">월</option>
+                             <option value="1">1</option>
+                             <option value="2">2</option>
+                             <option value="3">3</option>
+                             <option value="4">4</option>
+                             <option value="5">5</option>
+                             <option value="6">6</option>
+                             <option value="7">7</option>
+                             <option value="8">8</option>
+                             <option value="9">9</option>
+                             <option value="10">10</option>
+                             <option value="11">11</option>
+                             <option value="12">12</option>
+                         </select>
+                     </span>
+                     <span class="main-text-birth" style="margin-left: 10px;">
+                         <input id="dd" type="text" placeholder="일"></input>
+                     </span>
+                 </span>
+                <!--
+                    * @filename    : naver.html
+                    * @author      : 신승윤 (gsh05144@naver.com)
+                    * @description : option속성을 이용한 성별 정의
+                 -->
+                <h3>성별</h3>
+                <span class="main-text">
+                    <select id="gender" class="selectbox" name="gender">
+                        <option value="gender">성별</option>
+                        <option value="man">남자</option>
+                        <option value="woman">여자</option>
+                    </select>
+                </span>
+
+                <!--
+                    * @filename    : naver.html
+                    * @author      : 신승윤 (gsh05144@naver.com)
+                    * @description : input 태그를 이용한 이메일 입력칸 생성
+                 -->
+                <span class="choice">
+                    <h3>본인 확인 이메일</h3>
+                    <span>(선택)</span>
+                </span>
+                <span class="main-text">
+                    <input id="mail" Name="mail" type="text" placeholder="선택입력"></input>
+                </span>
+            </div>
+            
+            <!--
+                * @filename    : naver.html
+                * @author      : 신승윤 (gsh05144@naver.com)
+                * @description : otion 속성을 이용한 국제번호 생성
+             -->
+            <div>
+                <h3>휴대전화</h3>
+                <span class="main-text">
+                    <select id="country" class="selectbox" name="country" onchange="">
+                        <option value="ko">대한민국 +82</option>
+                        <option value="47">노르웨이 +47</option>
+                        <option value="64">뉴질랜드 +64</option>
+                    </select>
+                </span>
+
+                 <!--
+                * @filename    : naver.html
+                * @author      : 신승윤 (gsh05144@naver.com)
+                * @description : input 속성을 전화번호 입력 및 button 생성
+                 -->
+                <div style="display: flex;">
+                    <span class="main-text" style="width:100%; margin: 10px 0px 0px 0px">
+                        <input id="phone" type="text" placeholder="전화번호 입력"></input>
+                    </span>
+                    <span class="cnum-number">
+                        <button id="cnum-btn">인증번호 받기</button>
+                    </span>
+                </div>
+                
+                <span class="main-text" style="margin-top: 10px;">
+                    <input id="cnum" type="text" placeholder="인증번호 입력하세요"></input>
+                </span>
+            </div>
+
+             <!--
+                * @filename    : naver.html
+                * @author      : 신승윤 (gsh05144@naver.com)
+                * @description : input 속성을 이용한 카입하기 버튼 생성
+             -->
+            <div>
+                <div class="signup-btn">
+                    <input type="submit" value="가입하기" id="sub-btn" >
+                </div>
+            </div>
+       
+         </div>
+    </form>
+   
+    <script src="naver.js"></script>
+  
+</body>
+</html>
