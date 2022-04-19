@@ -49,8 +49,9 @@ const grade = [
     ["민혁", 80, 86, 84],
 ];
 
-for(const item of grade) {
-    const s = new Student(item[1], item[2], item[3]);
+for(const item of grade) {     //2차 배열을 통째로 걸었으니깐 item은 철수 성적 한줄이 된다. item[0]="철수"
+//학생 한명에 대한 객체 생성   국      영      수   점수 삽입.
+    const s = new Student(item[1], item[2], item[3]); // 점수 합계에 대한 합계, 평균값을 리턴받을 수 있다.
     console.log("%s 의 총점은 %d점이고 평균은 %d점 입니다", item[0] , s.sum(), s.avg());
 }
 

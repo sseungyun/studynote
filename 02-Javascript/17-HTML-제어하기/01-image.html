@@ -61,17 +61,19 @@
         <img src="img/img01.jpg" id="target" />
     </div>
 
-    <script>                                    // forEach에서 (v)는 각원소에 배열 하나하나가 된다. (링크 하나하나가 됨))
-        document.querySelectorAll(".link").forEach((v, i) => {        
+    <script>     //메서드 호출             //메서드 호출 = 메서드 체인     // forEach에서 (v)는 각원소에 배열 하나하나가 된다. (링크 하나하나가 됨))
+        document.querySelectorAll(".link").forEach((v, i) => {
+            // v.addEventListner click = 각 링크 하나하나당에 대해서 반복문을 돌린다는 뜻        
             v.addEventListener('click ', e => {  
                 // 링크에 대한 클릭 이벤트 발생 후 href 속성이 동작하게 된다.
                 // 아래 구문은 링크에 대한 클릭 이벤트 동작 후,
-                // href 속성이 동작하는 것을 방지한다.
+                // href 속성이 동작하는 것을 방지한다. 페이지가 머물러있다.
                 e.preventDefault();
 
                 // 클릭된 링크가 갖는 속성값 가져오기
-                // -- > 링크가 가르키는 원본 이미지의 주소
-                const src = e.currentTarget.getAttribute("href");    // 링크를 클릭했다면! 클릭된 링크 스스로에 href값을 가져옴   // -->img/img04.jpg
+                // img/img05.jpg -- > 링크가 원본 이미지의 주소
+                // e.currentTarget은 이벤트가 "발생"한 자기 자신.
+                const src = e.currentTarget.getAttribute("href");    // 링크를 클릭했다면! getAttribute 속성으로 인해 클릭된 링크 스스로에 href값을 가져옴 : src = img/img05.jpg
                 const title = e.currentTarget.getAttribute("title");       // -->테스트 이미지4
                 console.log(src); // 이미지값이 출력됨.
                 console.log(title);

@@ -32,9 +32,9 @@
                  console.log(e.currentTarget.dataset.test);
              });
          });
-                            //데이터 color 속성을 갖는 모든 요소
+                            //데이터 color 속성을 갖는 모든 요소(*)
          document.querySelectorAll('*[data-color]').forEach((v,i) => {
-             v.style.color = v.dataset.color;
+             v.style.color = v.dataset.color;       // html 속성을 css로 강제로 밀어넣어준다.
          });
 
          document.querySelectorAll('*[data-background]').forEach((v,i) => {

@@ -38,13 +38,13 @@ z1.move("본진");
 z1.sword("본진");
 
 var z2 = new Zealot("질럿2", 300, 25);
-z1.move("멀티");
-z1.sword("멀티");
+z2.move("멀티");
+z2.sword("멀티");
 
 var d1 = new Dragoon("드라군1", 250, 40);
-z1.move("본진");
-z1.sword("본진");
+d1.move("본진");
+d1.sword("본진");
 
 var d2 = new Dragoon("드라군2", 200, 35);
-z1.move("멀티");
-z1.sword("멀티");
+d2.move("멀티");
+d2.sword("멀티");

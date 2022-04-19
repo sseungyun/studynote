@@ -77,14 +77,15 @@
     <script>
         document.querySelectorAll('.tablinks').forEach((v,i) => {
             v.addEventListener('click', (e) => {
-                //현재 클릭된 항목의 인덱스 번호ㄴ
+                //현재 클릭된 항목의 인덱스 번호 (i)
                 const currentIndex = i;
 
-                // 클릭된 버튼에 적용된 'data-target'값을 취득
+                // 클릭된 버튼에 적용된 'data-target'속성값을 얻고 객체에 넣는다.
                 const currentTarget = e.currentTarget.dataset.target;    
 
                 // 모든 버튼에 대한 active클래스 해제 
                 document.querySelectorAll('.tablinks').forEach((v1, i1) => {
+                    // i1 = 인덱스 번호가 내가 클릭했을 때 currentIndex=i 값과 일치한다면 내가 클릭한 값과 일치하다는걸 감지
                     if (currentIndex == i1) {
                         v1.classList.add('active');
                     } else {
@@ -94,6 +95,7 @@
 
                 // 화면상에 보이는 모든 페이지를 숨김
                 document.querySelectorAll('.tabcontent').forEach((v2, i2) => {
+                    // tabcontent안에 각각요소안에 city라는값이 dataset-target값과 일치한다면
                     if (v2.dataset.city == currentTarget) {
                         v2.classList.add('active');
                     } else {

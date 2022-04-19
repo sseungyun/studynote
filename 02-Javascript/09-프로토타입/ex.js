@@ -1,24 +1,36 @@
-const User3 = function(id, email) {
-    this._id = id;
-    this._email = email;
-};
-
-User3.prototype.login = function() {
-    console.log("로그인 되었습니다. -> id=" + this._id + ", email=" + this._email)
-};
-
-User3.prototype.logout = function() {
-    console.log("로그아웃 되었습니다. ->id=" + this._id + ", email=" + this._email);
+function Rectangle() {
+    this._width = null;
+    this._height = null;
 }
 
-const student = new User3("학생", "gsh05144@naver.com");
+Rectangle.prototype = {
+    get width() {
+        return this._width;
+    },
 
-student.logout();
-student.login();
+    set width(param) {
+        this._width = param;
+    }, 
 
-const teacher = new User3("강사", "gsh05144@naver.com");
+    get height() {
+        return this._height;
+    },
 
-teacher._id = "선생님";
-teacher._email = "gsh@naver.com";
-teacher.login();
-teacher.logout();
+    set height(param) {
+        this._height = param;
+    },
+
+    getAround: function() {
+        return this.width * 2 + this.height * 2;
+    },
+    getArea : function() {
+        return this.width * this.height;
+    },
+    
+};
+
+const rect = new Rectangle();
+rect.width = 10;
+rect.height = 5;
+
+console.log('둘레의 길이는 %d이고 넓이는 %d입니다.' , rect.getAround(), rect.getArea());

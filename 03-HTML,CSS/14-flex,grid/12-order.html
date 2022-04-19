@@ -6,18 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .container1 {
-            display:flex;
-        }
-
-        .container2 {
-            display:inline-flex;
-        }
-        
         .container {
+            box-sizing: border-box;
             border: 2px dotted #06f;
             padding: 10px;
             height: 200px;
+            display: flex;
         }
 
         .item {
@@ -25,21 +19,26 @@
             padding: 10px;
             margin: 5px;
         }
+
+        .item:nth-child(1) {
+            order : 3;
+        }
+
+        .item:nth-child(2) {
+            order : 1;
+        }
+
+        .item:nth-child(3) {
+            order : 2;
+        }
     </style>
 </head>
 <body>
-    <h1>flex</h1>
-    <div class="container container1">
-        <div class="item">helloflex</div>
-        <div class="item">abc</div>
-        <div class="item">helloflex</div>
-    </div> 
-
-    <h1>inline-flex</h1>
-    <div class="container container2">
-        <div class="item">helloflex</div>
-        <div class="item">abc</div>
-        <div class="item">helloflex</div>
-    </div> 
+    <h1>order</h1>
+    <div class="container">
+        <div class="item">A</div>
+        <div class="item">B</div>
+        <div class="item">C</div>
+    </div>
 </body>
 </html>

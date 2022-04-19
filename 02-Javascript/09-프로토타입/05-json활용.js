@@ -6,9 +6,10 @@ function Member(username, password) {
 }
 
 // getter, setter, 메서드 일괄 정의
-Member.prototype = {
-    // 멤버 변수 _username에 대한 getter, setter
-    get username() {
+// meber라는 이름의 생성자한테 prototype하고서 json {} 을 대입한다. json의 형식은 key : value이다. 
+// js는 값이 들어갈 자리에 function(메서드)이 들어가도 된다.
+Member.prototype =  {         
+    get username() {        // json안에서 get,set은 이름이 단순화 된다. 
         return this._username;
     },
 
@@ -16,9 +17,9 @@ Member.prototype = {
         this._username = param;
     },
 
-    // 멤버변수 _password에 대한 getter, setter
+    // 멤버 변수 _password에 대한 getter, setter
     get password() {
-        return this._password;
+        return this._password
     },
 
     set password(param) {
@@ -26,37 +27,35 @@ Member.prototype = {
     },
 
     // 로그인을 수행하는 메서드
-    login : function() {
-        console.log("[Member] 로그인되었습니다. username= " + this.username+ ", password= " + this.password);
-
+    login: function() {    // key : value , key : value  (값들 사이 사이에 쉼표 꼭 넣기)
+        console.log("[Member] 로그인되었습니다. username=" + this.username + ", password=" + this.password );
     },
 
     logout: function() {
-        //로그아웃이므로 아이디와 비밀번호를 비워준다.
         this.username = "";
         this.password = "";
-        console.log("[Member] 로그아웃되었습니다. username=" + this.username + ", password=" + this.password);
+        console.log("[Member] 로그아웃되었습니다. username=" + this.username + ", password=" + this._password);
     }
-    
 };
 
-console.log(Member.prototype);
+console.log(Member.prototype); // prototype 이라는 단어 뜻 그대로 '시제품' Member라는 함수에 대한 기본 구조들이 출력됨. 
 
 // 생성자를 통한 객체 생성
-const member1 = new Member('hello', '1234');
+const member1 = new Member('hello', '1234');  // 생성자로 파라미터 전달 받은 변수 
 
 // getter를 통한 멤버변수 반환받기
-console.log(member1.username);
+console.log(member1.username);    //getter를 통해서 확인한 다음
 console.log(member1.password);
 
 // 메서드 호출
-member1.login();
+member1.login();               // 호출
 member1.logout();
 
+
 // setter를 통한 멤버변수 변경
-member1.username = "world";
+member1.username = "world"      // setter로 값을 바꾸어 보고 
 member1.password = "1234";
 
-//메서드 호출
-member1.login();
+// 메서드 호출
+member1.login();           // 호출
 member1.logout();

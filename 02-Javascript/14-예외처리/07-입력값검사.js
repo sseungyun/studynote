@@ -17,7 +17,7 @@ try {
     regex.engNum(userid, "아이디는 영어와 숫자의 조합만 가능합니다.");
     regex.maxLen(userid, "아이디는 최대 20글자까지만 가능합니다.");
 } catch (err) {
-    console.group("%s 에러 발생", err.name);
+    console.group("%s 에러 발생", err.name); 
     console.error("에러코드: %d", err.statusCode);
     console.error("에러내용: %s", err.maessage);
     console.groupEnd();
