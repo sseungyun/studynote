@@ -16,6 +16,7 @@ const k = null;
 try {
     k = foo(-1, -2); // 이 부분이 실행되다가 오류가나서 catch로 뛰었기때문에 
                      // k로 할당될 틈이 없이 변수 설정에 null이 그대로 출력됨.
+      //err객체에 throw new Error("x와 y가 0보다 작습니다.")가 전달된다.
 }   catch (err) {
     // 이 블록으로 전달되는 err객체는 5라인에서 생성한 Error 클래스의 객체이다.
     console.log("에러이름: %s" , err.name);

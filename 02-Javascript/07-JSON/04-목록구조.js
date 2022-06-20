@@ -30,6 +30,8 @@ for (let i = 0; i<classRoom.student.length; i++) {
 
 // for~of 문을 사용할 경우 몇 번째 항목인지를 알기 위해서는 반복문 시작전에 
 // 별도의 초기식과 반복문 안에 별도의 증감식을 추가해야 한다.
+// for of문은 s가 원소 하나가 된다. student1 json객체가 s에 대입된다.
+// for of 문은 초기식과 증감식을 따로 가져가야 한다. 
 let i = 0; //초기식
 for (const s of classRoom.student) {
     console.group(i + "번째 학생");

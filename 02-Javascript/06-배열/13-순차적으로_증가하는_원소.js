@@ -18,12 +18,12 @@ console.log(data);
 //1씩 증가할 값
 let counter = 1;
 
-for (let i=0; i<data.length; i++) {
+for (let i=0; i<data.length; i++) {    // 6번 반복한다.
     for (let j=0; j<data[i].length; j++) {
         if ( i == 0 && j < 3 || counter > 30) {
             data[i][j] = 0;
         } else {
-            data[i][j] = counter++;
+            data[i][j] = counter++;     // 1을 먼저 data에 저장 해 두고 증가해서 2가된다.  
         }
     }
 }

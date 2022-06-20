@@ -18,10 +18,11 @@ console.log(data);
 // 나머지에 해당하는 부분을 버림 --> 가운데 위치의 항목을 이동하지 않음 "2"
 const p = parseInt(data.length/ 2); //parseInt        //2.5 를 0.5만 버리고 2만취해서 p에 넣어준다.
 
-for (let i = 0; i < p; i ++) {    // i가 2보다 작다 , 0번째 1번째
-    // 반대쪽 원소의 위치하게 하려면 새로운 변수를 위치 해야함.
-    const k = data.length - i -1;  // i를 빼고 -1을 더 빼면 반대쪽 결과가 출력됨.
 
+for (let i = 0; i < p; i ++) {    // i가 2보다 작다 0,1 두번 반복
+    // 반대쪽 원소의 위치    하게 하려면 새로운 변수를 위치 해야함.
+    const k = data.length - i -1;  // i(index)를 빼고 -1을 더 빼면 반대쪽 결과가 출력됨.
+     //k에 4,3 저장 
     // i 번째 원소와 k번째 원소의 교환
     const tmp = data[i];
     data[i] = data[k];

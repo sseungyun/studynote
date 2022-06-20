@@ -16,12 +16,12 @@
     <h1>Simple Module</h1>
     <a href="#" id="btn">load hello.json</a>
     <div id="console"></div>
-
-    <script src="libs/ajaxHelper.js"></script>
+         <!-- ajaxHelper 라이브러리 가져온다. -->
+    <script src="libs/ajaxHelper.js"></script>  
     <script>
         document.querySelector('#btn').addEventListener("click", e => {
             e.preventDefault();
-
+                             // 어떻게 출력할지만 잡아주면 된다.
             ajaxHelper("backend/hello.json", "GET", (json) => {
                 const h1 = document.createElement("h1");
                 h1.classList.add('text-success');

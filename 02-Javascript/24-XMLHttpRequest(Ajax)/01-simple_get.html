@@ -72,7 +72,7 @@
                         const s = parseInt(ajax.status / 100);
                         if (s == 4) {
                             /** 대체로 요청하고자 하는 URL이 존재하지 않거나 오타난 경우 */
-                            // 404 : Page Not Found
+                            // 404 : Page Not Found                                          //각각의 상황을 의미하는 영어 메세지
                             console.log("[%d] %s - 요청 주소가 잘못되었습니다.", ajax.status, ajax.statusText);
 
                         } else if( s== 5) {

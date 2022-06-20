@@ -16,10 +16,19 @@ class BadRequestException extends Error {
         super.name = "badRequestException";
         // 멤버 변수 추가
         this._statusCode = 400;
+        this._field = field;
     }
 
     get _statusCode() {
         return this._statusCode;
+    }
+
+    get field() {
+        return this._field;
+    }
+
+    set field(params) {
+        this._field = params;
     }
 }
 

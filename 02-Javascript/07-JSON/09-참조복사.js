@@ -58,6 +58,10 @@ console.log(a1);
 console.log(a2);
 console.log(a3);
 
+
+
+
+
 /** JSON의 깊은 복사 */
 const addr = {
     city : '서울',
@@ -67,6 +71,7 @@ const addr = {
 // 깊은 복사를 수행할 빈 JSON객체를 생성
 const copy = {};
 
+// 없는 key를 대입하면 생김
 for (let key in addr) {
     // copy.city와 copy.gu 와 동일한 처리
     copy[key] = addr[key];
@@ -87,5 +92,5 @@ const copy2 = {};
 // addr을 copy2에 깊은 복사 수행하는 JS내장기능
 // 복사될 copy2가 비어있는 JSON일 경우 복사.
 // copy2가 비어있지 않으면 누적
-Object.assign(copy2, addr);
+Object.assign(copy2, addr);  // addr(원본)을 copy2에 복사하겠다.
 console.log(copy2);

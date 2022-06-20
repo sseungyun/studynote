@@ -1,0 +1,32 @@
+{
+    "content":[
+        {
+            "category":"지속가능한 생활",
+            "subject" :"나만의 도시 정원을 가꾸는 법",
+            "url":"http://www.naver.com",
+            "img_pc": "./assets/img/40-lifestyle-urban-gardening-pc-736.webp",
+            "img_m": "./assets/img/40-lifestyle-urban-gardening-pc-736.webp",
+            "width":"736",
+            "height":"390"
+        },
+        {
+            "category":"지속가능한 모빌리티",
+            "subject" :"Power your beat: 아이오닉 5의 파워를 이용한 DJ공연",
+            "url":"http://www.naver.com",
+            "img_pc": "./assets/img/11-ioniq-power-your-beat-pc-352x390.webp",
+            "img_m": "./assets/img/11-ioniq-power-your-beat-pc-352x390.webp",
+            "width":352,
+            "height":290
+        },
+        {
+            "category":"고성능",
+            "subject" :"고성능 차를 운전하는 방법",
+            "url":"http://www.naver.com",
+            "img_pc": "./assets/img/05-n-drive-high-performance-pc-448.webp",
+            "img_m": "./assets/img/05-n-drive-high-performance-pc-448.webp",
+            "width":"448",
+            "height":"390"
+        }
+        
+    ]
+}

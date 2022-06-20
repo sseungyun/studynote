@@ -2,6 +2,7 @@
 
 // 여러 객체를 생성
 // 생성자 파라미터로 에러의 내용 전달
+// Error라는 자바스크립트 내장클래스의 객체를 만든다. 
 let err = new Error("이상한 일이 벌어졌습니다.");
 console.log("에러이름: %s", err.name);
 console.log("에러내용: %s", err.message);

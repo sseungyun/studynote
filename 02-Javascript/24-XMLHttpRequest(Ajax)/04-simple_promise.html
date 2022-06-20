@@ -56,9 +56,9 @@
 
         document.querySelector("#btn").addEventListener("click", e => {
             // 준비한 함수를 호출하여 promise 객체를 반환받는다.
-            // 이 과정에서 이미 Ajax연동처리는 완료되고 결과에 따라 resolve나 reject가 호출될 것이ㅏㄷ.
+            // 이 과정에서 이미 Ajax연동처리는 완료되고 결과에 따라 resolve나 reject가 호출될 것이다.
             const promise = getDepItem();
-            promise.then((json) => {
+            promise.then((json) => {                                    /// 성공이라면 then 실행 실패하면 catch 에러 생성.
                 const h1 = document.createElement("h1");
                 h1.classList.add('text-success');
                 h1.innerHTML = json.msg;

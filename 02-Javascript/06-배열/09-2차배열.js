@@ -12,7 +12,7 @@ console.log(myArr2);
 /** 3) 2차 배열의 원소 접근 */
 // 행-> 열 순으로 인덱스를 열거한다.
 
-console.log(myArr2[0][0]); // --> 1  첫번째[]--> 행 두번째[]은 --> 열을 출력한다.
+console.log(myArr2[0][0]); // --> 1  첫번째[]--> 행    두번째[]--> 열을 출력한다.
 console.log(myArr2[0][1]); // --> 2
 console.log(myArr2[0][2]); // --> 3
 console.log(myArr2[1][0]); // --> 4

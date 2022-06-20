@@ -6,6 +6,7 @@ const data= [1,5,2,4,3];
 console.log(data);
 
 // i 는 배열의 원소중 마지막을 제외한 항목을 스캔한다.
+            //       4-1이니 0~3까지이다.
 for (let i=0; i<data.lenth-1; i++) {
     // j는 배열의 원소중 i번째 다음 원소부터 마지막 원소까지 스캔
     for (let j=i+1; j<data.length; j++) {
